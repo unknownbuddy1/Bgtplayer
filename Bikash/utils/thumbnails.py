@@ -1,8 +1,3 @@
-# Power By @BikashHalder & @AdityaHalder 
-# Join @BikashGadgetsTech For More Update
-# Join @AdityaCheats For Hack
-# Join Our Chats @Bgt_Chat & @Adityadiscus 
-
 import os
 import re
 import textwrap
@@ -84,7 +79,7 @@ async def gen_thumb(videoid, user_id):
         draw.text((190, 530), f"Title: {title[:50]} ...", (255, 255, 255), font=font)
         draw.text((190, 570), f"Duration: {duration}", (255, 255, 255), font=font)
         draw.text((190, 610), f"Views: {views}", (255, 255, 255), font=font)
-        draw.text((190, 650), f"Powered By: Bikash & Aditya Halder (@BikashHalder @AdityaHalder)", (255, 255, 255), font=font)
+        draw.text((190, 650), f"Powered By: 𓆩•𝐊𝐢𝐬𝐬𝐮 💞•𓆪 (@kissu123456)", (255, 255, 255), font=font)
         try:
             os.remove(f"cache/thumb{videoid}.png")
             os.remove(f"cache/temp.png")
@@ -150,7 +145,7 @@ async def gen_qthumb(videoid, user_id):
         draw.text((190, 530), f"Title: {title[:50]} ...", (255, 255, 255), font=font)
         draw.text((190, 570), f"Duration: {duration}", (255, 255, 255), font=font)
         draw.text((190, 610), f"Views: {views}", (255, 255, 255), font=font)
-        draw.text((190, 650), f"Powered By: Bikash & Aditya Halder (@BikashHalder @AdityaHalder)", (255, 255, 255), font=font)
+        draw.text((190, 650), f"Powered By: 𓆩•𝐊𝐢𝐬𝐬𝐮 💞•𓆪 (@kissu123456)", (255, 255, 255), font=font)
         try:
             os.remove(f"cache/thumb{videoid}.png")
             os.remove(f"cache/temp.png")
@@ -160,10 +155,3 @@ async def gen_qthumb(videoid, user_id):
         return f"cache/{videoid}.png"
     except Exception:
         return YOUTUBE_IMG_URL
-
-
-
-# Power By @BikashHalder & @AdityaHalder 
-# Join @BikashGadgetsTech For More Update
-# Join @AdityaCheats For Hack
-# Join Our Chats @Bgt_Chat & @Adityadiscus 
