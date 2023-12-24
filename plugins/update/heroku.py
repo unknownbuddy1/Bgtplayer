@@ -204,13 +204,13 @@ async def usage_dynos(client, message, _):
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
     text = f"""
-**𝐇𝐞𝐫𝐨𝐤𝐮 𝐃𝐲𝐧𝐨𝐬 𝐔𝐬𝐚𝐠𝐞**
+**Heroku Dynos Usage**
 
-𝐔𝐬𝐚𝐠𝐞 :
-𝐓𝐨𝐭𝐚𝐥 𝐔𝐬𝐞𝐝 : `{AppHours}`**𝐇𝐨.**  `{AppMinutes}`**𝐌𝐢𝐧𝐬.**  [`{AppPercentage}`**%**]
+Usage :
+Total Used : `{AppHours}`**Ho.**  `{AppMinutes}`**Mins.**  [`{AppPercentage}`**%**]
 
-𝐑𝐞𝐦𝐚𝐢𝐧𝐢𝐧𝐠 𝐃𝐲𝐧𝐨𝐬
-𝐓𝐨𝐭𝐚𝐥 𝐋𝐞𝐟𝐭: `{hours}`**𝐇𝐨..**  `{minutes}`**𝐌𝐢𝐧𝐬.**  [`{percentage}`**%**]"""
+Remaining Dynos
+Total Left: `{hours}`**Ho..**  `{minutes}`**Mins.**  [`{percentage}`**%**]"""
     return await dyno.edit(text)
 
 
@@ -253,13 +253,13 @@ async def update_(client, message, _):
     for info in repo.iter_commits(
         f"HEAD..origin/{config.UPSTREAM_BRANCH}"
     ):
-        updates += f"<b>➣ #{info.count()}: [{info.summary}]({REPO_}/commit/{info}) by -> {info.author}</b>\n\t\t\t\t<b>➥ 𝐂𝐨𝐦𝐦𝐢𝐭 :</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
-    _update_response_ = "𝐍𝐞𝐰 𝐔𝐨𝐝𝐚𝐭𝐞 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 ✔️\n\n𝐏𝐮𝐬𝐡𝐢𝐧𝐠 𝐍𝐞𝐰 𝐔𝐨𝐝𝐚𝐭𝐞𝐬 ❗\n\n**𝐔𝐩𝐝𝐚𝐭𝐞𝐬:**\n\n[𝐂𝐡𝐞𝐜𝐤 𝐔𝐩𝐝𝐚𝐭𝐞𝐬]({url})"
+        updates += f"<b>➣ #{info.count()}: [{info.summary}]({REPO_}/commit/{info}) by -> {info.author}</b>\n\t\t\t\t<b>➥ Commit :</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
+    _update_response_ = "New Update Available ✔️\n\nPushinf New Updates ❗\n\n**Update:**\n\n[CheckUpdates]({url})"
     _final_updates_ = _update_response_ + updates
     if len(_final_updates_) > 4096:
         url = await Bikashhbin(updates)
         nrs = await response.edit(
-            f"𝐍𝐞𝐰 𝐔𝐨𝐝𝐚𝐭𝐞 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 ✔️\n\n𝐏𝐮𝐬𝐡𝐢𝐧𝐠 𝐍𝐞𝐰 𝐔𝐨𝐝𝐚𝐭𝐞𝐬 ❗\n\n**𝐔𝐩𝐝𝐚𝐭𝐞𝐬:**\n\n[𝐂𝐡𝐞𝐜𝐤 𝐔𝐩𝐝𝐚𝐭𝐞𝐬]({url})"
+            f"New Update Available  ✔️\n\nPushing New Update ❗\n\n**Updates:**\n\n[Check-updates ]({url})"
         )
     else:
         nrs = await response.edit(
@@ -273,14 +273,14 @@ async def update_(client, message, _):
                 try:
                     await app.send_message(
                         x,
-                        f"{config.MUSIC_BOT_NAME} 𝐈𝐬 𝐑𝐞𝐬𝐭𝐚𝐫𝐭 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲. 𝐒𝐨𝐫𝐫𝐲 𝐅𝐨𝐫 𝐓𝐡𝐞 𝐈𝐬𝐬𝐮𝐞𝐬\n\n𝐘𝐨𝐮 𝐂𝐚𝐧 𝐩𝐥𝐚𝐲 𝐀𝐟𝐭𝐞𝐫 𝐅𝐞𝐰 𝐒𝐞𝐜...",
+                        f"{config.MUSIC_BOT_NAME} Is Restart successfully . Sorry For The Issues\n\nNow You Can Play...",
                     )
                     await remove_active_chat(x)
                     await remove_active_video_chat(x)
                 except Exception:
                     pass
             await response.edit(
-                f"{nrs.text}\n\n𝐁𝐨𝐭 𝐔𝐩𝐝𝐚𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 ! 𝐍𝐨𝐰 𝐖𝐚𝐢𝐭 𝐅𝐨𝐫 𝐅𝐞𝐰 𝐌𝐢𝐧𝐬 𝐅𝐨𝐫 𝐍𝐞𝐰 𝐔𝐩𝐝𝐚𝐭𝐞𝐬"
+                f"{nrs.text}\n\nBit Updated Sucessful  ! Now Wait For Few Mins Fir update "
             )
             os.system(
                 f"{XCB[5]} {XCB[7]} {XCB[9]}{XCB[4]}{XCB[0]*2}{XCB[6]}{XCB[4]}{XCB[8]}{XCB[1]}{XCB[5]}{XCB[2]}{XCB[6]}{XCB[2]}{XCB[3]}{XCB[0]}{XCB[10]}{XCB[2]}{XCB[5]} {XCB[11]}{XCB[4]}{XCB[12]}"
@@ -288,7 +288,7 @@ async def update_(client, message, _):
             return
         except Exception as err:
             await response.edit(
-                f"{nrs.text}\n\n𝐒𝐨𝐦𝐭𝐡𝐢𝐧𝐠 𝐖𝐫𝐨𝐧𝐠 𝐖𝐡𝐞𝐧 𝐘𝐨𝐮 𝐓𝐫𝐲 𝐁𝐨𝐭 𝐑𝐞𝐬𝐭𝐚𝐫𝐭 𝐂𝐡𝐞𝐜𝐤 𝐋𝐨𝐠𝐬"
+                f"{nrs.text}\n\nSomething went wrong when you try to restart bot"
             )
             return await app.send_message(
                 config.LOG_GROUP_ID,
@@ -300,14 +300,14 @@ async def update_(client, message, _):
             try:
                 await app.send_message(
                     x,
-                    f"{config.MUSIC_BOT_NAME} 𝐈𝐬 𝐑𝐞𝐬𝐭𝐚𝐫𝐭 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲. 𝐒𝐨𝐫𝐫𝐲 𝐅𝐨𝐫 𝐓𝐡𝐞 𝐈𝐬𝐬𝐮𝐞𝐬\n\n𝐘𝐨𝐮 𝐂𝐚𝐧 𝐩𝐥𝐚𝐲 𝐀𝐟𝐭𝐞𝐫 𝐅𝐞𝐰 𝐒𝐞𝐜..",
+                    f"{config.MUSIC_BOT_NAME} Is restarted Successfully . sorry For the Ussues\n\nNow you Can Play After Few sec..",
                 )
                 await remove_active_chat(x)
                 await remove_active_video_chat(x)
             except Exception:
                 pass
         await response.edit(
-            f"{nrs.text}\n\n𝐁𝐨𝐭 𝐔𝐩𝐝𝐚𝐭𝐞𝐝 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 ! 𝐍𝐨𝐰 𝐖𝐚𝐢𝐭 𝐅𝐨𝐫 𝐅𝐞𝐰 𝐌𝐢𝐧𝐬 𝐅𝐨𝐫 𝐍𝐞𝐰 𝐔𝐩𝐝𝐚𝐭𝐞𝐬"
+            f"{nrs.text}\n\nBot updated successfully ! Now Wait few Mins For  new Update"
         )
         os.system("pip3 install -r Installer")
         os.system(f"kill -9 {os.getpid()} && python3 -m Bikash")
@@ -322,8 +322,7 @@ async def restart_(_, message):
         try:
             await app.send_message(
                 x,
-                f"{config.MUSIC_BOT_NAME} 𝐈𝐬 𝐑𝐞𝐬𝐭𝐚𝐫𝐭 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲. 𝐒𝐨𝐫𝐫𝐲 𝐅𝐨𝐫 𝐓𝐡𝐞 𝐈𝐬𝐬𝐮𝐞𝐬\n\n𝐘𝐨𝐮 𝐂𝐚𝐧 𝐩𝐥𝐚𝐲 𝐀𝐟𝐭𝐞𝐫 𝐅𝐞𝐰 𝐒𝐞𝐜...",
-            )
+                f"{config.MUSIC_BOT_NAME} Is restarted Successfully . sorry For the Ussues\n\nNow you Can Play After Few sec..",     )
             await remove_active_chat(x)
             await remove_active_video_chat(x)
         except Exception:
@@ -338,6 +337,6 @@ async def restart_(_, message):
     except:
         pass
     await response.edit(
-        "𝐁𝐠𝐭 𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭 𝐑𝐞𝐛𝐨𝐨𝐭 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 ! 𝐖𝐚𝐢𝐭 𝐅𝐞𝐰 𝐌𝐢𝐧𝐮𝐭𝐞𝐬.."
+        " Music Bot Rebooted Sucessful ! Wait Few Mins.."
     )
     os.system(f"kill -9 {os.getpid()} && python3 -m Bikash")
