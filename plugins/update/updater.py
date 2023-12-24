@@ -64,8 +64,8 @@ async def update_bot(_, message: Message):
     # os.system("git config --global credential.helper store")
     # os.system("echo 'https://{GIT_NAME}:{GIT_TOKEN}@github.com' > ~/.git-credentials")
     if update_avail:
-        await msg.edit("**🥀 𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐢𝐧𝐠 𝐁𝐨𝐭, 𝐏𝐥𝐞𝐚𝐬𝐞 » 𝐖𝐚𝐢𝐭 ✨ ...**")
+        await msg.edit("**🔄 Restarting Bot, Please » Wait ✨ ...**")
         os.system("git pull -f && pip3 install -U -r Installer")
         os.system(f"kill -9 {os.getpid()} && bikash start")
         return
-    await msg.edit(f"**🥀 𝐀𝐥𝐫𝐞𝐚𝐝𝐲 𝐔𝐩𝐝𝐚𝐭𝐞𝐝 𝐓𝐨 𝐋𝐚𝐭𝐞𝐬𝐭 ✨ ...**")
+    await msg.edit(f"**🚦 Already Updated To Latest ✨ ...**")
