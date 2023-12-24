@@ -1,25 +1,25 @@
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+lfrom pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 def botplaylist_markup(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="🤫 𝐏𝐞𝐫𝐬𝐨𝐧𝐚𝐥 🤫",
+                text="🤫 Personal 🤫",
                 callback_data="get_playlist_playmode",
             ),
             InlineKeyboardButton(
-                text="🌎 𝐆𝐥𝐨𝐛𝐚𝐥 🌏", callback_data="get_top_playlists"
+                text="🌎 Global 🌏", callback_data="get_top_playlists"
             ),
         ],
         [           
             InlineKeyboardButton(
-                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
+                text="🦋 Movies-Bot 🦋", url=f"https://t.me/kissu_movies_bot"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="☠️ Close ☠️", callback_data="close"
             ),
         ],
     ]
@@ -30,12 +30,12 @@ def top_play_markup(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="𝐓𝐨𝐩 10 𝐏𝐥𝐚𝐲𝐋𝐢𝐬𝐭𝐬", callback_data="SERVERTOP"
+                text="Top-List", callback_data="SERVERTOP"
             )
         ],
         [
             InlineKeyboardButton(
-                text="🤫 𝐏𝐞𝐫𝐬𝐨𝐧𝐚𝐥 🤫", callback_data="SERVERTOP user"
+                text="🤫 Personal 🤫", callback_data="SERVERTOP user"
             )
         ],
         [
@@ -43,20 +43,20 @@ def top_play_markup(_):
                 text="🌍 ɢʟᴏʙᴀʟ 🌏", callback_data="SERVERTOP global"
             ),
             InlineKeyboardButton(
-                text="𝐆𝐫𝐨𝐮𝐩's", callback_data="SERVERTOP chat"
+                text="💐 Group's 💐", callback_data="SERVERTOP chat"
             )
         ],
         [           
             InlineKeyboardButton(
-                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
+                text="🍿Movies-Bot🍿", url=f"https://t.me/kissu_movies_bot"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="◁ 𝐁𝐚𝐜𝐤 ◁", callback_data="get_playmarkup"
+                text="◁ Back ◁", callback_data="get_playmarkup"
             ),
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="☠️ Close ☠️", callback_data="close"
             ),
         ],
     ]
@@ -67,18 +67,18 @@ def get_playlist_markup(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="𝐀𝐮𝐝𝐢𝐨 🔊", callback_data="play_playlist a"
+                text="Audio 🔊", callback_data="play_playlist a"
             ),
             InlineKeyboardButton(
-                text="𝐕𝐢𝐝𝐞𝐨 📽️", callback_data="play_playlist v"
+                text="Video 📽️", callback_data="play_playlist v"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="◁ 𝐁𝐚𝐜𝐤 ◁", callback_data="home_play"
+                text="◁ Back ◁", callback_data="home_play"
             ),
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="☠️ Close ☠️", callback_data="close"
             ),
         ],
     ]
@@ -89,28 +89,28 @@ def top_play_markup(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="𝐓𝐨𝐩 10 𝐏𝐥𝐚𝐲 𝐋𝐢𝐬𝐭", callback_data="SERVERTOP"
+                text="Top-Playlist", callback_data="SERVERTOP"
             )
         ],
         [
             InlineKeyboardButton(
-                text="🤫 𝐏𝐞𝐫𝐬𝐨𝐧𝐚 🤫", callback_data="SERVERTOP Personal"
+                text="🤫 Personal 🤫", callback_data="SERVERTOP Personal"
             )
         ],
         [
             InlineKeyboardButton(
-                text="🌏 𝐆𝐥𝐨𝐛𝐚𝐥 🌎", callback_data="SERVERTOP Global"
+                text="🌏 Global 🌎", callback_data="SERVERTOP Global"
             ),
             InlineKeyboardButton(
-                text="☘ 𝐆𝐫𝐨𝐮𝐩'𝐬 ☘", callback_data="SERVERTOP Group"
+                text="💐 Group'𝐬 💐", callback_data="SERVERTOP Group"
             )
         ],
         [
             InlineKeyboardButton(
-                text="◁ 𝐁𝐚𝐜𝐤 ◁", callback_data="get_playmarkup"
+                text="◁ Back ◁", callback_data="get_playmarkup"
             ),
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="☠️ Close ☠️", callback_data="close"
             ),
         ],
     ]
@@ -121,11 +121,11 @@ def failed_top_markup(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="◁ 𝐁𝐚𝐜𝐤 ◁",
+                text="◁ Back ◁",
                 callback_data="get_top_playlists",
             ),
             InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+                text="☠️ Close ☠️", callback_data="close"
             ),
         ],
     ]
