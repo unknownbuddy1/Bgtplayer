@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <img src="https://telegra.ph/file/4d7a997a6c8c4eb406829.jpg">
+  <img src="https://graph.org/file/ceb0185c9bc67dce3ad3f.jpg">
 </p>
 
 
@@ -138,7 +138,7 @@ hieght="38.30" /></a>
 <h4>Click the button below to deploy Bikash Music Bot on Heroku!</h4>    
 
 <a
-href="https://heroku.com/deploy?template=https://github.com/BikashHalderNew/Bgtplayer"><img src="https://img.shields.io/badge/Deploy%20On%20Heroku-seagreen?style=for-the-badge&logo=Heroku" width="220"
+href="https://heroku.com/deploy?template=https://github.com/unknownbuddy1/Bgtplayer"><img src="https://img.shields.io/badge/Deploy%20On%20Heroku-seagreen?style=for-the-badge&logo=Heroku" width="220"
 hieght="38.30" /></a>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
