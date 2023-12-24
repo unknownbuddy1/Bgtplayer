@@ -31,7 +31,7 @@ AUTHUSERS_COMMAND = get_command("AUTHUSERS_COMMAND")
 async def auth(client, message: Message, _):
     if not message.reply_to_message:
         if len(message.command) != 2:
-            return await message.reply_text("**𝐑𝐞𝐩𝐥𝐲 𝐓𝐨 𝐀 𝐔𝐬𝐞𝐫'𝐬 𝐌𝐞𝐬𝐬𝐬𝐚𝐠𝐞 𝐎𝐫 𝐆𝐢𝐯𝐞 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞/𝐔𝐬𝐞𝐫𝐈𝐝.**")
+            return await message.reply_text("**reply To a User's Message or Give username/userid.**")
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
@@ -43,7 +43,7 @@ async def auth(client, message: Message, _):
         _check = await get_authuser_names(message.chat.id)
         count = len(_check)
         if int(count) == 20:
-            return await message.reply_text("**𝐘𝐨𝐮 𝐂𝐚𝐧 𝐎𝐧𝐥𝐲 𝐇𝐚𝐯𝐞 20 𝐔𝐬𝐞𝐫𝐬 𝐢𝐧 𝐘𝐨𝐮𝐫 𝐀𝐮𝐭𝐡 𝐔𝐬𝐞𝐫**")
+            return await message.reply_text("**You can only Have  20 Users in Your Auth User**")
         if token not in _check:
             assis = {
                 "auth_user_id": user.id,
@@ -56,9 +56,9 @@ async def auth(client, message: Message, _):
                 if user.id not in get:
                     get.append(user.id)
             await save_authuser(message.chat.id, token, assis)
-            return await message.reply_text("**✅ 𝐀𝐝𝐝𝐞𝐝 𝐓𝐨 𝐀𝐮𝐭𝐡𝐨𝐫𝐢𝐬𝐞𝐝 𝐔𝐬𝐞𝐫𝐬\n𝐋𝐢𝐬𝐭 𝐎𝐟 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 ✨.**")
+            return await message.reply_text("**✅ Added in Authorised \nList your Group ✨.**")
         else:
-            await message.reply_text("** ✅ 𝐀𝐥𝐫𝐞𝐚𝐝𝐲 𝐢𝐧 𝐓𝐡𝐞 𝐀𝐮𝐭𝐡𝐨𝐫𝐢𝐬𝐞𝐝\n𝐔𝐬𝐞𝐫𝐬 𝐋𝐢𝐬𝐭 💞**")
+            await message.reply_text("** ✅ Already in Authorised \nUsers list 💞**")
         return
     from_user_id = message.from_user.id
     user_id = message.reply_to_message.from_user.id
@@ -70,7 +70,7 @@ async def auth(client, message: Message, _):
     for smex in _check:
         count += 1
     if int(count) == 20:
-        return await message.reply_text("**𝐘𝐨𝐮 𝐂𝐚𝐧 𝐎𝐧𝐥𝐲 𝐇𝐚𝐯𝐞 20 𝐔𝐬𝐞𝐫𝐬 𝐢𝐧 𝐘𝐨𝐮𝐫 𝐀𝐮𝐭𝐡 𝐔𝐬𝐞𝐫**")
+        return await message.reply_text("**You can only Have  20 Users in Your Auth User**")
     if token not in _check:
         assis = {
             "auth_user_id": user_id,
