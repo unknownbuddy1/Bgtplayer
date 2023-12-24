@@ -270,23 +270,23 @@ async def overall_stats(client, CallbackQuery, _):
     else:
         ass = "No"
     cm = config.CLEANMODE_DELETE_MINS
-    text = f"""**𝐁𝐨𝐭 𝐒𝐭𝐚𝐭𝐬 𝐀𝐧𝐝 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧:**
+    text = f"""**Bot Status And Info:**
 
-**𝐈𝐦𝐩𝐨𝐫𝐭𝐞𝐝 𝐌𝐨𝐝𝐮𝐥𝐞𝐬:** {mod}
-**𝐒𝐞𝐫𝐯𝐞𝐝 𝐂𝐡𝐚𝐭𝐬:** {served_chats} 
-**𝐒𝐞𝐫𝐯𝐞𝐝 𝐔𝐬𝐞𝐫:** {served_users} 
-**𝐁𝐥𝐨𝐜𝐤𝐞𝐝 𝐔𝐬𝐞𝐫𝐬:** {blocked} 
-**𝐒𝐮𝐝𝐨 𝐔𝐬𝐞𝐫𝐬:** {sudoers} 
+**Imported Modules:** {mod}
+**Seeved Chats:** {served_chats} 
+**Served User:** {served_users} 
+**Blocked User:** {blocked} 
+**Sudo User:** {sudoers} 
     
-**𝐓𝐨𝐭𝐚𝐥 𝐐𝐮𝐞𝐫𝐢𝐞𝐬:** {total_queries} 
-**𝐓𝐨𝐭𝐚𝐥 𝐀𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐭𝐬:** {assistant}
-**𝐀𝐮𝐭𝐨 𝐋𝐞𝐚𝐯𝐢𝐧𝐠 𝐀𝐬𝐬𝐢𝐬𝐭𝐧𝐭:** {ass}
-**𝐂𝐥𝐞𝐚𝐧 𝐌𝐨𝐝𝐞 𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧:** {cm} 𝐌ɪɴs
+**Total Query:** {total_queries} 
+**Total Assistant :** {assistant}
+**Auto Leaving Assistant:** {ass}
+**Clean Mode Duration :** {cm} 𝐌ɪɴs
 
-**𝐏𝐥𝐚𝐲 𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧 𝐋𝐢𝐦𝐢𝐭:** {play_duration} 𝐌ɪɴs
-**𝐒𝐨𝐧𝐠 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐋𝐦𝐢𝐭:** {song} 𝐌ɪɴs
-**𝐁𝐨𝐭'𝐬 𝐒𝐞𝐫𝐯𝐞𝐝 𝐩𝐥𝐚𝐲𝐢𝐧𝐠 𝐋𝐢𝐦𝐢𝐭:** {playlist_limit}
-**𝐏𝐥𝐚𝐲𝐢𝐧𝐠 𝐏𝐥𝐚𝐲 𝐋𝐢𝐦𝐢𝐭:** {fetch_playlist}"""
+**Play Duration limit:** {play_duration} Mins
+**Song Download limit:** {song} Mins
+**Bots Served Playing:** {playlist_limit}
+**playing play limit:** {fetch_playlist}"""
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
         await CallbackQuery.edit_message_media(
@@ -353,31 +353,31 @@ async def overall_stats(client, CallbackQuery, _):
     sudoers = len(await get_sudoers())
     text = f""" **𝐁𝐨𝐭 𝐒𝐭𝐚𝐭𝐬 𝐀𝐧𝐝 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧:**
 
-**𝐈𝐦𝐩𝐨𝐫𝐭𝐞𝐝 𝐌𝐨𝐝𝐮𝐥𝐞𝐬:** {mod}
-**𝐏𝐥𝐚𝐭𝐟𝐫𝐨𝐦:** {sc}
-**𝐑𝐚𝐦:** {ram}
-**𝐏𝐡𝐲𝐬𝐢𝐜𝐚𝐥 𝐂𝐨𝐫𝐞𝐬:** {p_core}
-**𝐓𝐨𝐭𝐚𝐥 𝐂𝐨𝐫𝐞𝐬:** {t_core}
-**𝐂𝐩𝐮 𝐅𝐫𝐞𝐪𝐮𝐞𝐧𝐜𝐲 :** {cpu_freq}
+**Imported Modules:** {mod}
+**Platform:** {sc}
+**Rak:** {ram}
+**Physics Cores:** {p_core}
+**Total Cores :** {t_core}
+**Cpu Frequency  :** {cpu_freq}
 
-**𝐏𝐲𝐭𝐡𝐨𝐧 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 :** {pyver.split()[0]}
-**𝐏𝐲𝐫𝐨𝐠𝐫𝐚𝐦 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 :** {pyrover}
-**𝐏𝐲-𝐭𝐠𝐜𝐚𝐥𝐥𝐬 𝐕𝐞𝐫𝐬𝐢𝐨𝐧 :** {pytgver}
+**Python Version:** {pyver.split()[0]}
+**Pyrogram version  :** {pyrover}
+**Py-tg call version  :** {pytgver}
 
-**𝐒𝐭𝐨𝐫𝐚𝐠𝐞 𝐀𝐯𝐚𝐢𝐥:** {total[:4]} 𝐆𝐢𝐁
-**𝐒𝐭𝐨𝐫𝐚𝐠𝐞 𝐔𝐬𝐞𝐝:** {used[:4]} 𝐆𝐢𝐁
-**𝐒𝐭𝐨𝐫𝐚𝐠𝐞 𝐋𝐞𝐟𝐭:** {free[:4]} 𝐆𝐢𝐁
+**Storage Avail:** {total[:4]} GiB
+**Storage Used:** {used[:4]} GiB
+**Storage Left:** {free[:4]} GiB
 
-**𝐒𝐞𝐫𝐯𝐞𝐝 𝐂𝐡𝐚𝐭𝐬:** {served_chats} 
-**𝐒𝐞𝐫𝐯𝐞𝐝 𝐔𝐬𝐞𝐫𝐬:** {served_users} 
-**𝐁𝐥𝐨𝐜𝐤𝐞𝐝 𝐔𝐬𝐞𝐫𝐬:** {blocked} 
-**𝐒𝐮𝐝ᴏ 𝐔𝐬𝐞𝐫𝐬:** {sudoers} 
+**Served Chats :** {served_chats} 
+**Served users:** {served_users} 
+**Blocked Users:** {blocked} 
+**Sudo Users:** {sudoers} 
 
-**𝐓𝐨𝐭𝐚𝐥 𝐃𝐛 𝐒𝐢𝐳𝐞:** {datasize[:6]} 𝐌β
-**𝐓𝐨𝐭𝐚𝐥 𝐃𝐛 𝐒𝐭𝐨𝐫𝐚𝐠𝐞:** {storage} 𝐌β
-**𝐓𝐨𝐭𝐚𝐥 𝐃𝐛 𝐂𝐨𝐥𝐥𝐞𝐜𝐭𝐢𝐨𝐧𝐬:** {collections}
-**𝐓𝐨𝐭𝐚𝐥 𝐃𝐛 𝐊𝐞𝐲𝐬:** {objects}
-**𝐓𝐨𝐭𝐚𝐥 𝐁𝐨𝐭 𝐐𝐮𝐞𝐫𝐢𝐞𝐬:** `{total_queries} `
+**Total Db Size:** {datasize[:6]} 𝐌β
+**Total Db storage:** {storage} 𝐌β
+**Total Db collection :** {collections}
+**Total Db keys :** {objects}
+**Total Bot Queries :** `{total_queries} `
     """
     med = InputMediaPhoto(media=config.STATS_IMG_URL, caption=text)
     try:
