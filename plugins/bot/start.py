@@ -1,8 +1,3 @@
-# Powered By @BikashHalder & @AdityaHalder 
-# Join @BikashGadgetsTech For More Updates
-# Join @AdityaCheats For Hacks
-# Join Our Chats @Bgt_Chat & @Adityadiscus 
-
 import asyncio
 import time
 
@@ -55,7 +50,7 @@ async def start_comm(client, message: Message, _):
             return await message.reply_text(_["song_2"])
         if name[0:3] == "sta":
             m = await message.reply_text(
-                f"🥱 𝐆𝐞𝐭𝐭𝐢𝐧𝐠 𝐘𝐨𝐮𝐫 𝐏𝐞𝐫𝐬𝐨𝐧𝐚𝐥 𝐒𝐭𝐚𝐭𝐬 𝐅𝐫𝐨𝐦 {config.MUSIC_BOT_NAME} 𝐒𝐞𝐫𝐯𝐞𝐫."
+                f"🥱 Getting Your Personal Stats From {config.MUSIC_BOT_NAME} 𝐒𝐞𝐫𝐯𝐞𝐫."
             )
             stats = await get_userss(message.from_user.id)
             tot = len(stats)
@@ -91,7 +86,7 @@ async def start_comm(client, message: Message, _):
                     details = stats.get(vidid)
                     title = (details["title"][:35]).title()
                     if vidid == "telegram":
-                        msg += f"🔗[𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐌𝐞𝐝𝐢𝐚]({config.SUPPORT_GROUP}) ** 𝐏𝐥𝐚𝐲𝐞𝐝 {count} 𝐓𝐢𝐦𝐞𝐬**\n\n"
+                        msg += f"🔗[Telegram Media ]({config.SUPPORT_GROUP}) ** Played {count} Times**\n\n"
                     else:
                         msg += f"🔗 [{title}](https://www.youtube.com/watch?v={vidid}) ** played {count} times**\n\n"
                 msg = _["ustats_2"].format(tot, tota, limit) + msg
@@ -115,7 +110,7 @@ async def start_comm(client, message: Message, _):
                 sender_name = message.from_user.first_name
                 return await app.send_message(
                     config.LOG_GROUP_ID,
-                    f"{message.from_user.mention} 𝐉𝐮𝐬𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐓𝐡𝐞 𝐁𝐨𝐭 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 <code>𝐒𝐮𝐝𝐨𝐥𝐢𝐬𝐭</code>\n\n**𝐔𝐬𝐞𝐫 𝐈𝐝:** {sender_id}\n**𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞:** {sender_name}",
+                    f"{message.from_user.mention} Just started the Bot to check <code>Sudolist</code>\n\n**User-id:** {sender_id}\n**Username:** {sender_name}",
                 )
             return
         if name[0:3] == "lyr":
@@ -126,18 +121,18 @@ async def start_comm(client, message: Message, _):
                 return await Telegram.send_split_text(message, lyrics)
             else:
                 return await message.reply_text(
-                    "𝐅𝐚𝐢𝐥𝐞𝐝 𝐓𝐨 𝐆𝐞𝐭 𝐋𝐲𝐫𝐢𝐜𝐬."
+                    "Failed to get lyrics ."
                 )
         if name[0:3] == "del":
             await del_plist_msg(client=client, message=message, _=_)
         if name == "verify":
-            await message.reply_text(f"𝐇𝐞𝐲 {message.from_user.first_name},\n𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐕𝐞𝐫𝐢𝐟𝐲𝐢𝐧𝐠 𝐘𝐨𝐮𝐫𝐬𝐞𝐥𝐟 𝐈𝐧 {config.MUSIC_BOT_NAME}, 𝐍𝐨𝐰 𝐘𝐨𝐮 𝐂𝐚𝐧 𝐆𝐨 𝐁𝐚𝐜𝐤 & 𝐒𝐭𝐚𝐫𝐭 𝐔𝐬𝐢𝐧𝐠 𝐌𝐞.")
+            await message.reply_text(f"Hey {message.from_user.first_name},\nThanx  For Verifying Yourself in {config.MUSIC_BOT_NAME}, Now You Can Go Back & Start using me.")
             if await is_on_off(config.LOG):
                 sender_id = message.from_user.id
                 sender_name = message.from_user.first_name
                 return await app.send_message(
                     config.LOG_GROUP_ID,
-                    f"{message.from_user.mention} 𝐉𝐮𝐬𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐓𝐡𝐞 𝐁𝐨𝐭 𝐓𝐨 <code> 𝐕𝐞𝐫𝐢𝐟𝐲 𝐇𝐢𝐦𝐬𝐞𝐥𝐟</code>\n\n**𝐔𝐬𝐞𝐫 𝐈𝐝:** {sender_id}\n**𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞:** {sender_name}",
+                    f"{message.from_user.mention} Just Started  The bot to <code> Verify  𝐇𝐢𝐦𝐬𝐞𝐥𝐟</code>\n\n**User-id:** {sender_id}\n**Username:** {sender_name}",
                 )
             return
         if name[0:3] == "inf":
@@ -157,18 +152,18 @@ async def start_comm(client, message: Message, _):
                 link = result["link"]
                 published = result["publishedTime"]
             searched_text = f"""
-🌺**𝐓𝐫𝐚𝐜𝐤 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 **🌺
+🌺**Track-Information **🌺
 
 🥀 **𝐓𝐢𝐭𝐥𝐞:** {title}
 
-⏳ **𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧:** {duration} ᴍɪɴᴜᴛᴇs
-👀 **𝐕𝐢𝐞𝐰𝐬:** `{views}`
-⏰ **𝐏𝐮𝐛𝐥𝐢𝐬𝐡𝐞𝐝 𝐎𝐧:** {published}
-🎥 **𝐂𝐡𝐚𝐧𝐧𝐞𝐥:** {channel}
-📎 **𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐋𝐢𝐧𝐤:** [𝐕𝐢𝐬𝐢𝐭 𝐂𝐡𝐚𝐧𝐧𝐞𝐥]({channellink})
-🔗 **𝐋𝐢𝐧𝐤:** [𝐖𝐚𝐭𝐜𝐡 𝐎𝐧 𝐘𝐨𝐮𝐭𝐮𝐛𝐞]({link})
+⏳ **Duration:** {duration} ᴍɪɴᴜᴛᴇs
+👀 **Views:** `{views}`
+⏰ **Published on:** {published}
+🎥 **Channel:** {channel}
+📎 **Channel-link:** [𝐕𝐢𝐬𝐢𝐭 𝐂𝐡𝐚𝐧𝐧𝐞𝐥]({channellink})
+🔗 **Link:** [Watch On YouTube ]({link})
 
-💖 𝐒𝐞𝐚𝐫𝐜𝐡 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 {config.MUSIC_BOT_NAME}"""
+💖 Search Powered by  {config.MUSIC_BOT_NAME}"""
             key = InlineKeyboardMarkup(
                 [
                     [
@@ -194,7 +189,7 @@ async def start_comm(client, message: Message, _):
                 sender_name = message.from_user.first_name
                 return await app.send_message(
                     config.LOG_GROUP_ID,
-                    f"{message.from_user.mention} 𝐉𝐮𝐬𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐁𝐨𝐭 𝐓𝐨 𝐂𝐡𝐞𝐜𝐤 <code> 𝐓𝐫𝐚𝐜𝐤 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧</code>\n\n**𝐔𝐬𝐞𝐫 𝐈𝐝:** {sender_id}\n**𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞:** {sender_name}",
+                    f"{message.from_user.mention} Just started the Bot to check<code> Track Information </code>\n\n**User-id:** {sender_id}\n**Username:** {sender_name}",
                 )
     else:
         try:
@@ -227,7 +222,7 @@ async def start_comm(client, message: Message, _):
             sender_name = message.from_user.first_name
             return await app.send_message(
                 config.LOG_GROUP_ID,
-                f"{message.from_user.mention} 𝐉𝐮𝐬𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐘𝐨𝐮𝐫 𝐁𝐨𝐭.\n\n**𝐔𝐬𝐞𝐫 𝐈𝐝:** {sender_id}\n**𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞:** {sender_name}",
+                f"{message.from_user.mention} Just Started  Bit.\n\n**User-id:** {sender_id}\n**Username:** {sender_name}",
             )
 
 
@@ -258,7 +253,7 @@ async def welcome(client, message: Message):
     if config.PRIVATE_BOT_MODE == str(True):
         if not await is_served_private_chat(message.chat.id):
             await message.reply_text(
-                "**𝐏𝐫𝐢𝐯𝐚𝐭𝐞 𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭**\n\n𝐎𝐧𝐥𝐲 𝐅𝐨𝐫 𝐓𝐡𝐞 𝐂𝐡𝐚𝐭𝐬 𝐀𝐮𝐭𝐡𝐨𝐫𝐢𝐞𝐬 𝐁𝐲 𝐌𝐲 𝐎𝐰𝐧𝐞𝐫, 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐈𝐧 𝐌𝐲 𝐎𝐰𝐧𝐞𝐫 𝐏𝐦 𝐓𝐨 𝐀𝐮𝐭𝐡𝐨𝐫𝐢𝐞𝐬 𝐘𝐨𝐮𝐫 𝐂𝐡𝐚𝐭 & 𝐈𝐟 𝐘𝐨𝐮 𝐃𝐨𝐧'𝐭 𝐖𝐚𝐧𝐭 𝐓𝐨 𝐃𝐨 𝐓𝐡𝐞𝐍 𝐋𝐞𝐚𝐯𝐞 𝐂𝐡𝐚𝐭."
+                "**Private Music Bot**\n\nOnly For The Chats Authorised By My Admin Request On My channel To Authorise Your Chat ."
             )
             return await app.leave_chat(message.chat.id)
     else:
@@ -309,7 +304,3 @@ async def welcome(client, message: Message):
 
 
 
-# Powered By @BikashHalder & @AdityaHalder 
-# Join @BikashGadgetsTech For More Updates
-# Join @AdityaCheats For Hacks
-# Join Our Chats @Bgt_Chat & @Adityadiscus 
