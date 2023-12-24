@@ -1,9 +1,3 @@
-# Powered By @BikashHalder & @AdityaHalder 
-# Join @BikashGadgetsTech For More Updates
-# Join @AdityaCheats For Hacks
-# Join Our Chats @Bgt_Chat & @Adityadiscus 
-
-
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup,
                             InlineQueryResultPhoto)
@@ -51,15 +45,15 @@ async def inline_query_handler(client, query):
                 ]
             )
             searched_text = f"""
-📌 **𝐓𝐢𝐭𝐥𝐞:** [{title}]({link})
+📌 **Title:** [{title}]({link})
 
-⏳ **𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧:** {duration} Mins
-👀 **𝐕𝐢𝐞𝐰𝐬:** `{views}`
-⏰ **𝐏𝐮𝐛𝐥𝐢𝐬𝐡𝐞𝐝 𝐎𝐧:** {published}
-🎥 **𝐂𝐡𝐚𝐧𝐧𝐞𝐥:** {channel}
-📎 **𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐋𝐢𝐧𝐤:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
+⏳ **Duration:** {duration} Mins
+👀 **Views:** `{views}`
+⏰ **Published on :** {published}
+🎥 **Channel:** {channel}
+📎 **Channel-link:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
 
-💖 **𝐒𝐞𝐚𝐫𝐜𝐡 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 {MUSIC_BOT_NAME}**"""
+💖 **Search powered by {MUSIC_BOT_NAME}**"""
             answers.append(
                 InlineQueryResultPhoto(
                     photo_url=thumbnail,
@@ -76,10 +70,3 @@ async def inline_query_handler(client, query):
             )
         except:
             return
-
-
-
-# Powered By @BikashHalder & @AdityaHalder 
-# Join @BikashGadgetsTech For More Updates
-# Join @AdityaCheats For Hacks
-# Join Our Chats @Bgt_Chat & @Adityadiscus 
